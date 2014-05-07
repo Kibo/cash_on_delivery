@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">  
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
+        <title>Dobírka</title>
+        <meta name="description" content="Poštovní dobírková poukázka typu A">
+        <meta name="viewport" content="width=device-width">                    
+        <link rel='stylesheet' href='/stylesheets/style.css' />   		       
+    </head>
+    <body>       
+	<div class="book">		
+		<div class="page">
+	        <div class="subpage">
+	        	<table>	        		
+					<tr>	        				        				        		
+	        			<td class="post_address">
+	        				<ul>
+	        					<li><%= sender.firstname && sender.lastname ? sender.firstname + ' ' + sender.lastname : '' %></li>
+	        					<li><%= sender.street ? sender.street: '' %></li>	        					
+	        					<li><%= sender.city ? sender.city: '' %></li>	
+	        					<li><%= sender.zip ? sender.zip: '' %></li>        					
+	        				</ul>
+	        				<ul>
+	        					<li><%= recipient.firstname && recipient.lastname ? recipient.firstname + ' ' + recipient.lastname : '' %></li>
+	        					<li><%= recipient.street ? recipient.street: '' %></li>	        					
+	        					<li><%= recipient.city ? recipient.city: '' %></li>	
+	        					<li><%= recipient.zip ? recipient.zip: '' %></li>  	        					
+	        				</ul>	        					        			
+	        			</td>	        			
+	        		</tr>	        			        	
+	        		<tr>	        			
+	        			<td class="post_order">	 
+	        				<% if(reprezentation === 'preview'){%>       				
+	    						<img src="/images/post_order.png">
+	    					<% } %>
+	    						    						    					
+	        				<span class="placeable sender_name_1"><%= sender.firstname && sender.lastname ? sender.firstname + ' ' + sender.lastname : '' %></span>
+	        				<span class="placeable sender_street_1"><%= sender.street ? sender.street : '' %></span>	        				
+	        				<span class="placeable sender_city_1"><%= sender.zip && sender.city  ? sender.zip + ' ' + sender.city : '' %></span>
+	        				
+	        				<span class="placeable recipient_name_1"><%= recipient.firstname && recipient.lastname ? recipient.firstname + ' ' + recipient.lastname : '' %></span>
+	        				<span class="placeable recipient_street_1"><%= recipient.street ? recipient.street : '' %></span>	        				
+	        				<span class="placeable recipient_city_1"><%= recipient.zip && recipient.city  ? recipient.zip + ' ' + recipient.city : '' %></span>	        				        	     				        	
+	        				
+	        				<span class="placeable bank_purpose_of_payment_1"><%= bank.purpose_of_payment ? bank.purpose_of_payment : '' %></span>
+	        				<span class="placeable bank_account_number_1"><%= bank.account_number ? bank.account_number : '' %></span>
+	        				<span class="placeable bank_variable_symbol_1"><%= bank.variable_symbol ? bank.variable_symbol : '' %></span>
+	        				<span class="placeable bank_specific_symbol_1"><%= bank.specific_symbol ? bank.specific_symbol : '' %></span>
+	        				<span class="placeable bank_amount_number_1"><%= bank.amount_number_full ? bank.amount_number_full : '' %></span>
+	        				<span class="placeable bank_amount_number_as_text"><%= bank.amount_number_as_text ? bank.amount_number_as_text : '' %></span>
+	        				<span class="placeable bank_amount_number_penny_1"><%= bank.amount_number_penny ? bank.amount_number_penny : '' %></span>
+	        				
+	        				<span class="placeable sender_name_2"><%= sender.firstname && sender.lastname ? sender.firstname + ' ' + sender.lastname : '' %></span>
+	        				<span class="placeable sender_street_2"><%= sender.street ? sender.street : '' %></span>	        				
+	        				<span class="placeable sender_city_2"><%= sender.zip && sender.city  ? sender.zip + ' ' + sender.city : '' %></span>
+	        				
+	        				<span class="placeable grid recipient_firstname_2"><%= recipient.firstname ? recipient.firstname : '' %></span>
+	        				<span class="placeable grid recipient_lastname_2"><%= recipient.lastname ? recipient.lastname : '' %></span>
+	        				<span class="placeable grid recipient_street_2"><%= recipient.street ? recipient.street : '' %></span>	        				
+	        				<span class="placeable grid recipient_city_2"><%= recipient.city  ? recipient.city : '' %></span>
+	        				<span class="placeable grid recipient_zip_2"><%= recipient.zip ? recipient.zip : '' %></span>
+	        				
+	        				<span class="placeable grid bank_amount_number_2"><%= bank.amount_number_full_grid ? bank.amount_number_full_grid : '' %></span>
+	        				<span class="placeable grid bank_amount_number_penny_2"><%= bank.amount_number_penny ? bank.amount_number_penny : '' %></span>	        				
+	        				<span class="placeable grid bank_account_number_prefix_2"><%= bank.account_number_prefix ? bank.account_number_prefix : '' %></span>
+	        				<span class="placeable grid bank_account_number_account_2"><%= bank.account_number_account ? bank.account_number_account : '' %></span>
+	        				<span class="placeable grid bank_account_number_bank_code_2"><%= bank.account_number_bank_code ? bank.account_number_bank_code : '' %></span>
+	        				<span class="placeable grid bank_variable_symbol_2"><%= bank.variable_symbol_full ? bank.variable_symbol_full : '' %></span>	        				
+	        				<span class="placeable grid bank_constant_symbol_2"><%= bank.constant_symbol ? bank.constant_symbol : '' %></span>
+	        				<span class="placeable grid bank_specific_symbol_2"><%= bank.specific_symbol_full ? bank.specific_symbol_full : '' %></span>	        					        					        					        					        					        					     
+	        			</td>
+	        		</tr>	        		        			        			       
+	        	</table>	        		        		        		        		        		   
+	       	</div> <!-- subpage -->
+	    </div> <!--page -->						      	    	    	    	  	  
+	</div> <!-- book -->		
+    </body>
+</html>

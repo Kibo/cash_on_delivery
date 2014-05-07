@@ -1,0 +1,289 @@
+@charset "UTF-8";
+
+/* ## CONSTANTS ######################################### */
+@PAGE_WIDTH: 210mm;
+@PAGE_HEIGHT:297mm;
+@PAGE_PADDING:0;
+
+@POST_TICKET_WIDTH:90mm;
+@POST_TICKET_HEIGHT:135mm;
+@POST_TICKET_LEFT_MARGIN:20mm;
+
+@POST_ORDER_WIDTH:210mm;
+@POST_ORDER_HEIGHT:101mm;
+
+@POST_ORDER_LEFT_MARGIN_LEVEL_1:5mm;
+@POST_ORDER_LEFT_MARGIN_LEVEL_2:15mm;
+@POST_ORDER_LEFT_MARGIN_LEVEL_3:65mm;
+@POST_ORDER_LEFT_MARGIN_LEVEL_4:123.6mm;
+@POST_ORDER_LEFT_MARGIN_LEVEL_5:153.5mm;
+
+@POST_ORDER_TOP_MARGIN_LEVEL_1:18.5mm;
+@POST_ORDER_TOP_MARGIN_LEVEL_2:27mm;
+@POST_ORDER_TOP_MARGIN_LEVEL_3:35.3mm;
+
+/* ## MIXINS ######################################## */
+.property_(@property, @value) {
+    _: 0 ~"; @{property}:" @value;
+}
+
+.vendor(@property, @value) {
+    .property_('-webkit-@{property}', @value);
+    .property_( '-khtml-@{property}', @value);
+    .property_(   '-moz-@{property}', @value);
+    .property_(          @property,   @value);
+}
+
+/* clearfix */
+.clear-fix(){
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* ## FONTS ######################################### */
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */ 
+@font-face {
+  font-family:"TeX Gyre Cursor";
+  src:url("../fonts/texgyrecursor/texgyrecursor-bold.eot") format("eot"),
+    url("../fonts/texgyrecursor/texgyrecursor-bold.woff") format("woff"),
+    url("../fonts/texgyrecursor/texgyrecursor-bold.ttf") format("truetype"),
+    url("../fonts/texgyrecursor/texgyrecursor-bold.svg#TeX-Gyre-Cursor") format("svg");
+  font-weight:normal;
+  font-style:normal;
+}
+
+/* ## BASE ######################################### */
+* {
+  .vendor(box-sizing, border-box);    
+}
+
+html{
+  font-size: 12pt;  
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #aaa;  
+  font-family:"TeX Gyre Cursor", monospace;
+  line-height: 1.3;
+}
+   
+.page {
+    width: @PAGE_WIDTH;
+    min-height: @PAGE_HEIGHT;
+    padding: @PAGE_PADDING;
+    margin: 1cm auto;       
+    background: white;    
+}
+.subpage {
+    padding: 0;         
+    height: (@PAGE_HEIGHT - (2 * @PAGE_PADDING));  
+}
+
+/* ## CONTENT ######################################### */
+table{
+  width:100%;  
+  border-collapse:collapse;
+  border-spacing:0;
+     
+  tr{
+    padding:0;
+    margin:0;
+        
+    td{
+      padding:0;
+      margin:0;
+      vertical-align:top;          
+      
+      ul{
+        font-size:2rem;
+        margin:0;
+        padding:1em;      
+        list-style:none;
+        li{
+          margin:0;
+          padding:0;
+        }      
+      }           
+    }
+           
+    .placeable{
+        position:absolute;
+     } 
+     
+    td.post_order{
+      font-size:0.7rem;
+      line-height: 0;                      
+      width:@POST_ORDER_WIDTH;
+      height:@POST_ORDER_HEIGHT;
+      position:relative;
+                         
+      img{
+        width:100%; 
+        height:100%;              
+      }
+      
+      .sender_name_1{
+        top:53.3mm;
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
+      }  
+     
+     .sender_street_1{
+       top:58.3mm;
+       left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
+      } 
+     
+     .sender_city_1{
+       top:63.5mm;
+       left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
+      } 
+      
+     .recipient_name_1{
+        top:83.2mm;
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
+      }  
+     
+     .recipient_street_1{
+       top:88.2mm;
+       left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
+      } 
+     
+     .recipient_city_1{
+       top:93.5mm;
+       left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
+      }
+      
+      .bank_purpose_of_payment_1{
+        top:30.5mm;
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;
+      }      
+      
+      .bank_account_number_1{
+        top:68.5mm;
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_2; 
+      }      
+      
+      .bank_variable_symbol_1{
+        top:73mm;
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_2; 
+      }
+      
+      .bank_specific_symbol_1{
+        top:77.3mm;
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_2; 
+      }     
+      
+      .bank_amount_number_1{
+        top:36mm;
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;
+      }
+      
+      .bank_amount_number_penny_1{
+        top:36mm;
+        left:53mm;
+      }
+      
+      .bank_amount_number_as_text{
+        top:43mm;
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;
+      } 
+            
+      .sender_name_2{
+        top:37.3mm;
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_3;         
+      }  
+     
+     .sender_street_2{
+       top:42.3mm;
+       left:@POST_ORDER_LEFT_MARGIN_LEVEL_3;         
+      } 
+     
+     .sender_city_2{
+       top:48mm;
+       left:@POST_ORDER_LEFT_MARGIN_LEVEL_3;         
+      }
+      
+      .grid{
+        letter-spacing:9.7px;
+        font-size: 15px; 
+      }
+            
+      .recipient_firstname_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:49mm;
+      }
+      .recipient_lastname_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:56mm;
+      }
+      .recipient_street_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:62.5mm;
+      }
+      .recipient_city_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:68.7mm;
+      }
+      .recipient_zip_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:76mm;
+      }   
+      
+      .bank_amount_number_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:10mm;
+      }       
+      
+      .bank_amount_number_penny_2{
+        left:163.4mm;
+        top:10mm; 
+      }        
+      
+      .bank_account_number_prefix_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:@POST_ORDER_TOP_MARGIN_LEVEL_1;
+      }     
+      
+      .bank_account_number_account_2{
+          left:@POST_ORDER_LEFT_MARGIN_LEVEL_5;
+          top:@POST_ORDER_TOP_MARGIN_LEVEL_1; 
+      }
+      
+      .bank_account_number_bank_code_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:@POST_ORDER_TOP_MARGIN_LEVEL_2; 
+      }
+      
+      .bank_variable_symbol_2{
+         left:@POST_ORDER_LEFT_MARGIN_LEVEL_5;
+         top:@POST_ORDER_TOP_MARGIN_LEVEL_2; 
+      }
+      
+      .bank_constant_symbol_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4; 
+        top:@POST_ORDER_TOP_MARGIN_LEVEL_3;      
+      }
+      
+      .bank_specific_symbol_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_5;
+        top:@POST_ORDER_TOP_MARGIN_LEVEL_3; 
+      }                                     
+    }              
+  } 
+}
+/* ## PRINT ######################################### */
+
+@media print { 
+  @page {
+      size:A4 portrait;          
+      margin:0;    
+      margin-bottom:-1mm;  /* Chrome hack */
+  }
+       
+  .page {
+        margin: 0;              
+        page-break-after: always;            
+    }
+}

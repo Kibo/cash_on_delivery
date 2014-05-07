@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Poštovní dobírková poukázka A - formulář</title>
+		<meta name="description" content="Formulář pro vyplnění poštovní dobírkové poukázky typu A.">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+		<h1>Poštovní dobírková poukázka A</h1>
+		<ul>
+			<li><a href="https://www.postshop.cz/cs/archove-provedeni/postovni-poukazka-a-dobirkova-s-adresnim/p&id=50">Poukázky pro tisk</a></li>				
+			<li><a href="#">API pro integraci s Vaším eshopem</a></li>
+		</ul>				
+		<form action="/save" method="post" role="form">
+			<fieldset>
+				<legend>
+					Adresa majitele účtu
+				</legend>
+				
+				<div class="form-group">
+					<label>Jméno</label>
+					<input type="text" name="sender[firstname]" value="Tomas" class="form-control" placeholder="Vlož jméno majitele účtu">
+				</div>
+
+				<div class="form-group">
+					<label>Přijmení</label>
+					<input type="text" name="sender[lastname]" value="Jurman" class="form-control" placeholder="Vlož příjmení majitele účtu">
+				</div>
+
+				<div class="form-group">
+					<label>Ulice</label>
+					<input type="text" name="sender[street]" value="Třebízského 4" class="form-control" placeholder="Vlož název ulice">
+				</div>
+
+				<div class="form-group">
+					<label>Město</label>
+					<input type="text" name="sender[city]" value="Znojmo" class="form-control" placeholder="Vlož název města">
+				</div>
+
+				<div class="form-group">
+					<label>PSČ</label>
+					<input type="text" name="sender[zip]" value="66902" class="form-control" placeholder="Vlož PSČ">
+				</div>
+
+				<div class="form-group">
+					<label>Telefon</label>
+					<input type="text" name="sender[phone]" value="728 435 724" class="form-control" placeholder="Vlož telefon majitele účtu">
+				</div>
+
+				<div class="form-group">
+					<label>Email</label>
+					<input type="text" name="sender[email]" value="tomasjurman@gmail.com" class="form-control" placeholder="Vlož email majitele účtu">
+				</div>
+			</fieldset>
+				
+			<fieldset>
+				<legend>
+					Bankovní účet
+				</legend>
+				
+				<div class="form-group">
+					<label>Účel platby</label>
+					<input type="text" name="bank[purpose_of_payment]" value="Splátka" class="form-control" placeholder="Vlož účel splátky">
+				</div>
+
+				<div class="form-group">
+					<label>Číslo účtu</label>
+					<input type="text" name="bank[account_number]" value="98-123456789/0800" class="form-control" placeholder="Vlož číslo účtu">
+					<p class="help-block">Vzor: 98-123456789/0800</p>
+				</div>
+
+				<div class="form-group">
+					<label>Variabilní symbol</label>
+					<input type="text" name="bank[variable_symbol]" value="456" class="form-control" placeholder="Vlož variabilní symbol">
+				</div>
+
+				<div class="form-group">
+					<label>Specifický symbol</label>
+					<input type="text" name="bank[specific_symbol]" value="123" class="form-control" placeholder="Vlož specifický symbol">
+				</div>
+
+				<div class="form-group">
+					<label>Konstantní symbol</label>
+					<input type="text" name="bank[constant_symbol]" value="789" class="form-control" placeholder="Vlož constantní symbol">
+				</div>
+
+				<div class="form-group">
+					<label>Částka</label>
+					<input type="text" name="bank[amount_number]" value="2289" class="form-control" placeholder="Vlož dobírkovou částku">
+				</div>
+
+			</fieldset>
+			
+			<fieldset>
+				<legend>
+					Plátce dobírkové částky
+				</legend>
+				<div class="form-group">
+					<label>Jméno</label>
+					<input type="text" name="recipient[firstname]" value="Petr" class="form-control" placeholder="Vlož jméno plátce">
+				</div>
+
+				<div class="form-group">
+					<label>Příjmení</label>
+					<input type="text" name="recipient[lastname]" value="Bundakundapakunda" class="form-control" placeholder="Vlož příjmení plátce">
+				</div>
+
+				<div class="form-group">
+					<label>Ulice</label>
+					<input type="text" name="recipient[street]" value="Bolzánova 18" class="form-control" placeholder="Vlož název ulice">
+				</div>
+
+				<div class="form-group">
+					<label>Město</label>
+					<input type="text" name="recipient[city]" value="Praha" class="form-control" placeholder="Vlož název města">
+				</div>
+
+				<div class="form-group">
+					<label>PSČ</label>
+					<input type="text" name="recipient[zip]" value="36958" class="form-control" placeholder="Vlož PSČ">
+				</div>
+
+				<div class="form-group">
+					<label>Telefon</label>
+					<input type="text" name="recipient[phone]" value="124 563 789" class="form-control" placeholder="Vlož telefon plátce">
+				</div>
+
+				<div class="form-group">
+					<label>Email</label>
+					<input type="text" name="recipient[email]" value="petrbunda@email.com" class="form-control" placeholder="Vlož email plátce">
+				</div>
+			</fieldset>
+
+			<p>
+				<input class="btn btn-lg" type="submit" value="data">				
+				<input class="btn btn-lg" type="submit" name="reprezentation" value="print">
+				<input class="btn btn-primary btn-lg" type="submit" name="reprezentation" value="preview">
+			</p>
+		</form>
+		</div><!-- container -->
+	</body>
+</html>
