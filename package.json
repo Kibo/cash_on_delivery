@@ -1,10 +1,9 @@
 {
   "name": "PostForms",
-  "version": "0.0.1",
+  "version": "0.4.0",
+  "description": "Web service for filling out the postal order form.",
   "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
+ 
   "dependencies": {
     "express": "~3.4.8",
     "static-favicon": "~1.0.0",
@@ -20,6 +19,14 @@
   
   "devDependencies": {
 	"nodeunit": "*",
-	"nodemon": "*"
-	}
+	"nodemon": "*",
+	"grunt": "^0.4.4",
+	"grunt-contrib-nodeunit": "*",
+	"grunt-apidoc": "*"
+   },
+   	
+   "scripts": {
+   		"start": "node app.js",
+		"test": "grunt test"
+	}	
 }

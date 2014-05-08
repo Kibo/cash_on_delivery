@@ -21,39 +21,42 @@ exports.index = function( req, res ) {
 };
 
 /**
- * Save document
- * @api {post} /save
+ * @api {post} /save Save
+ *
  * @apiVersion 0.4.0
- * @apiName SaveDocument
  * @apiGroup Document
- * 
- * @apiParam {String} sender[firstname]
- * @apiParam {String} sender[lastname]
- * @apiParam {String} sender[streetname]
- * @apiParam {String} sender[city]
- * @apiParam {String} sender[zip]
- * @apiParam {String} sender[phone]
- * @apiParam {String} sender[email]
- * 
- * @apiParam {String} bank[purpose_of_payment]
- * @apiParam {String} bank[account_number]
- * @apiParam {String} bank[variable_symbol]
- * @apiParam {String} bank[specific_symbol]
- * @apiParam {String} bank[constant_symbol]
- * @apiParam {String} bank[amount_number]
- * 
- * @apiParam {String} recipient[firstname]
- * @apiParam {String} recipient[lastname]
- * @apiParam {String} recipient[streetname]
- * @apiParam {String} recipient[city]
- * @apiParam {String} recipient[zip]
- * @apiParam {String} recipient[phone]
- * @apiParam {String} recipient[email]
- * 
- * @apiSuccess (302)
- * 
- * @apiExample Example usage:
- * 	curl -L 'http://HOST/save' --data 'sender%5Bfirstname%5D=Tomas&sender%5Blastname%5D=Jurman&sender%5Bstreet%5D=T%C5%99eb%C3%ADzsk%C3%A9ho+4&sender%5Bcity%5D=Znojmo&sender%5Bzip%5D=66902&sender%5Bphone%5D=728+435+724&sender%5Bemail%5D=tomasjurman%40gmail.com&bank%5Bpurpose_of_payment%5D=Spl%C3%A1tka&bank%5Baccount_number%5D=98-123456789%2F0800&bank%5Bvariable_symbol%5D=456&bank%5Bspecific_symbol%5D=123&bank%5Bconstant_symbol%5D=789&bank%5Bamount_number%5D=2289&recipient%5Bfirstname%5D=Petr&recipient%5Blastname%5D=Bundakundapakunda&recipient%5Bstreet%5D=Bolz%C3%A1nova+18&recipient%5Bcity%5D=Praha&recipient%5Bzip%5D=36958&recipient%5Bphone%5D=124+563+789&recipient%5Bemail%5D=petrbunda%40email.com&reprezentation=preview'
+ * @apiName SaveDocument
+ * @apiDescription Save the document.
+ *
+ * @apiParamTitle (note) Important! For correct field name look at  column with name 'Description'. (ApiDoc tool does not support such field name.)
+ * @apiParam (note) {String} sender_firstname sender[firstname]
+ * @apiParam (note) {String} sender_lastname sende[lastname]
+ * @apiParam (note) {String} sender_street sender[street]
+ * @apiParam (note) {String} sender_city sender[city]
+ * @apiParam (note) {String} sender_zip sender[zip]
+ * @apiParam (note) {String} sender_phone sender[phone]
+ * @apiParam (note) {String} sender_email sender[email]
+ *
+ * @apiParam (note) {String} [bank_purpose_of_payment] bank[purpose_of_payment]
+ * @apiParam (note) {String} bank_account_number bank[account_number]
+ * @apiParam (note) {String} bank_variable_symbol bank[variable_symbol]
+ * @apiParam (note) {String} [bank_specific_symbol] bank[specific_symbol]
+ * @apiParam (note) {String} [bank_constant_symbol] bank[constant_symbol]
+ * @apiParam (note) {String} bank_amount_number bank[amount_number]
+ *
+ * @apiParam (note) {String} recipient_firstname recipient[firstname]
+ * @apiParam (note) {String} recipient_lastname recipient[lastname]
+ * @apiParam (note) {String} recipient_streetname recipient[streetname]
+ * @apiParam (note) {String} recipient_city recipient[city]
+ * @apiParam (note) {String} recipient_zip recipient[zip]
+ * @apiParam (note) {String} recipient_phone recipient[phone]
+ * @apiParam (note) {String} recipient_email recipient[email]
+ *
+ * @apiSuccess (201) Success Success and redirect.
+ * @apiError (400) BadRequest Validation error.
+ *
+ * @apiExample CURL usage:
+ * 	curl -i -X POST http://HOST/save --data 'sender%5Bfirstname%5D=Tomas&sender%5Blastname%5D=Jurman&sender%5Bstreet%5D=T%C5%99eb%C3%ADzsk%C3%A9ho+4&sender%5Bcity%5D=Znojmo&sender%5Bzip%5D=66902&sender%5Bphone%5D=728+435+724&sender%5Bemail%5D=tomasjurman%40gmail.com&bank%5Bpurpose_of_payment%5D=Spl%C3%A1tka&bank%5Baccount_number%5D=98-123456789%2F0800&bank%5Bvariable_symbol%5D=456&bank%5Bspecific_symbol%5D=123&bank%5Bconstant_symbol%5D=789&bank%5Bamount_number%5D=2289&recipient%5Bfirstname%5D=Petr&recipient%5Blastname%5D=Bundakundapakunda&recipient%5Bstreet%5D=Bolz%C3%A1nova+18&recipient%5Bcity%5D=Praha&recipient%5Bzip%5D=36958&recipient%5Bphone%5D=124+563+789&recipient%5Bemail%5D=petrbunda%40email.com&reprezentation=preview'
  */
 exports.save = function(req, res){
 	
@@ -64,7 +67,7 @@ exports.save = function(req, res){
 		delete req.body.reprezentation;
 																		
 		db.save(COLLECTION_NAME, req.body, function( doc ){					
-			res.redirect(302, '/get/' + doc[0]._id + '/' + reprezentation);							
+			res.redirect(201, '/get/' + doc[0]._id + '/' + reprezentation);							
 			return;	
 		});				
 	}else{	
@@ -74,20 +77,23 @@ exports.save = function(req, res){
 };
 
 /**
-* Get reprezentation of document
-* @api {get} /get/:id/:reprezentation?
-* @apiVersion 0.4.0
-* @apiName GetDocument
-* @apiGroup Document
-* 
-* @apiParam {String} id
-* @apiParam {String=} reprezentation - (data | preview | print)
-* 
-* @apiSuccess (200)
-* 
-* @apiExample Example usage:
-* 	curl -i http://HOST/get/536a4a09617b0235489842ae/preview
-*/
+ * @api {get} /get/:id/:reprezentation? Get
+ * 
+ * @apiVersion 0.4.0
+ * @apiGroup Document
+ * @apiName GetDocument
+ * @apiDescription Get the reprezentation of the document.
+ *
+ * @apiParam {String} id Document id value
+ * @apiParam {String} [reprezentation=data] data | preview | print
+ *
+ * @apiSuccess (200) Success Get a reprezentation of the document.
+ * @apiError (404) NotFound The <code>id</code> of the document was not found.
+ * @apiError (400) BadRequest The request had bad syntax.
+ *
+ * @apiExample CURL usage:
+ * 	curl -i -X GET http://HOST/get/536a4a09617b0235489842ae/preview
+ */
 exports.get = function( req, res ) {	
 	try{						
 		db.get(COLLECTION_NAME, req.params.id, function(doc){
@@ -103,6 +109,27 @@ exports.get = function( req, res ) {
 		res.json(400, { error: e.message });
 		return;				
 	}
+};
+
+/**
+ * @api {delete} /delete/:id Delete
+ *
+ * @apiVersion 0.4.0
+ * @apiGroup Document
+ * @apiName DeleteDocument
+ * @apiDescription Delete the document
+ *
+ * @apiParam {String} id Document id value
+ *
+ * @apiSuccess (200) Success The document has been deleted.
+ * @apiError (404) NotFound The <code>id</code> of the document was not found.
+ * @apiError (400) BadRequest The request had bad syntax.
+ *
+ * @apiExample CURL usage:
+ * 	curl -i -X DELETE http://HOST/delete/536a4a09617b0235489842ae
+ */
+exports.del = function( req, res ){
+	//TODO
 };
 
 /**
