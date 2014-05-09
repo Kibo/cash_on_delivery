@@ -39,5 +39,5 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'default', [ 'nodeunit', 'jshint', 'apidoc' ] );
 	grunt.registerTask( 'test', [ 'nodeunit' ] );
 	grunt.registerTask( 'doc', [ 'apidoc' ] );
-	grunt.registerTask( 'gh-pages', [ 'gh-pages' ] );
+	grunt.registerTask( 'web', [ 'gh-pages' ] );
 };
