@@ -22,7 +22,9 @@
 	"nodemon": "*",
 	"grunt": "^0.4.4",
 	"grunt-contrib-nodeunit": "*",
-	"grunt-apidoc": "*"
+	"grunt-contrib-jshint": "~0.6.3",
+	"grunt-apidoc": "*",
+	"grunt-gh-pages":"*"
    },
    	
    "scripts": {

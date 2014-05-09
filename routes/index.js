@@ -156,10 +156,10 @@ function show(req, res, doc){
 			
 		default:		
 			res.render( 'get', extendsData( doc ) );
-	};	
+	}
 		
 	return;	
-};
+}
 
 /**
  * Get last part from pathname
@@ -197,7 +197,7 @@ function validate( data ){
 			result = false;
 		}
 		
-		for(key in data[keys[i]]){
+		for(var key in data[keys[i]]){
 			if (data[keys[i]].hasOwnProperty(key)) {
 				if(typeof data[keys[i]][key] !== 'string'){									
 					messages.push( key + ' is not string value.');
@@ -212,7 +212,7 @@ function validate( data ){
 		'result':result,
 		'messages':messages,
 	};
-};
+}
 
 /**
  * Parse data
@@ -225,7 +225,7 @@ function extendsData(data){
 		var parsed = parseAccountNumber( data.bank.account_number );		
 		data.bank.account_number_prefix = pad( parsed[0], 6, '0');
 		data.bank.account_number_account = pad( parsed[1], 10, '0');
-		data.bank.account_number_bank_code = pad( parsed[2], 4, '0');;		
+		data.bank.account_number_bank_code = pad( parsed[2], 4, '0');	
 	}
 	
 	if(data.bank.amount_number){
@@ -240,7 +240,7 @@ function extendsData(data){
 	data.bank.specific_symbol_full = pad( data.bank.specific_symbol, 10, '0');
 			
 	return data;
-};
+}
 
 /**
  * Splits account number to three parts: prefix, number, bank
@@ -252,21 +252,22 @@ function parseAccountNumber( accountNumber ){
 	var number = accountNumber;
 	var prefix = '';
 	var bank = '';
+	var splited;
 	
 	if(accountNumber.indexOf("-") !== -1){
-		var splited = accountNumber.split("-");
+		splited = accountNumber.split("-");
 		prefix = splited[0];
 		number = splited[1]; 
 	}
 	
 	if(number.indexOf("/") !== -1){
-		var splited = number.split("/");
+		splited = number.split("/");
 		number = splited[0];
 		bank =  splited[1];
 	}
 		
 	return [prefix, number, bank];		
-};
+}
 
 /**
  * Completes string to the required length.
@@ -281,12 +282,12 @@ function pad( base, len, chars, toRight){
 			
 	if (base.length >= len){
 		return base;
-	};
+	}
 		
 	return toRight ? 
 		base + new Array(len - base.length + 1).join( chars ) : 
 		new Array(len - base.length + 1).join( chars ) + base;	
-};
+}
 
 if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test" ) {
 	exports.validate = validate;
