@@ -1,5 +1,5 @@
 module.exports = function( grunt ) {
-	grunt.initConfig( {
+	grunt.initConfig( {			
 		pkg: grunt.file.readJSON( 'package.json' ),
 
 		nodeunit: {
@@ -36,8 +36,9 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-gh-pages' );
 
-	grunt.registerTask( 'default', [ 'nodeunit', 'jshint', 'apidoc' ] );
+	grunt.registerTask( 'default', [ 'nodeunit', 'jshint', 'apidoc', 'web']);
 	grunt.registerTask( 'test', [ 'nodeunit' ] );
 	grunt.registerTask( 'doc', [ 'apidoc' ] );
+	grunt.registerTask( 'lint', [ 'jshint' ] );
 	grunt.registerTask( 'web', [ 'gh-pages' ] );
 };

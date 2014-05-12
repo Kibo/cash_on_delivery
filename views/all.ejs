@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>List of documents</title>
+		<meta name="description" content="List of all documents.">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+		<style>			
+			table td:last-child{
+				text-align:right;
+			}			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>List of documents</h1>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Created</th>
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<% for(var idx = 0, len = docs.length ; idx <= len; idx++){
+					if(!docs[idx]) continue; %>
+
+					<tr>
+						<td><a href="/get/<%= docs[idx]['_id'] %>/data"><%= docs[idx]['_id'] ? docs[idx]['_id'] : '' %> </a></td>
+						<td><%= docs[idx]['created'] ? docs[idx]['created'] : '' %></td>
+						<td>
+							<a href="/get/<%= docs[idx]['_id'] %>">print</a> | <a href="/get/<%= docs[idx]['_id'] %>/preview">preview</a>																	
+						</td>
+					</tr>
+					<%}%>
+				</tbody>
+			</table>
+		</div><!-- container -->
+	</body>
+</html>

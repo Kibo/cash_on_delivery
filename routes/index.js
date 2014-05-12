@@ -62,16 +62,18 @@ exports.save = function(req, res){
 	
 	var validation = validate(req.body);			
 	if( validation.result){		
+		req.body["created"] = new Date();		
+		req.body["created"] = new Date ( new Date().getTime() - ( 20 * 24 * 60 * 60 * 1000 )); //TODO - remove
 				
 		var reprezentation = req.body.reprezentation || REPREZENTATION.DATA;
 		delete req.body.reprezentation;
-																		
+																													
 		db.save(COLLECTION_NAME, req.body, function( doc ){					
 			res.redirect(201, '/get/' + doc[0]._id + '/' + reprezentation);							
 			return;	
 		});				
 	}else{	
-		res.json(400, { error: validation.messages });
+		res.json(400, {'message': validation.messages });
 		return;
 	}		
 };
@@ -98,7 +100,7 @@ exports.get = function( req, res ) {
 	try{						
 		db.get(COLLECTION_NAME, req.params.id, function(doc){
 			if(!doc){
-				res.json(404, { error: "Not Found" });
+				res.json(404, {'message': "Not Found" });
 				return;																						
 			}
 			
@@ -106,7 +108,7 @@ exports.get = function( req, res ) {
 			show(req, res, doc);				
 		});	
 	}catch( e ){		
-		res.json(400, { error: e.message });
+		res.json(400, {'message': e.message });
 		return;				
 	}
 };
@@ -128,8 +130,97 @@ exports.get = function( req, res ) {
  * @apiExample CURL usage:
  * 	curl -i -X DELETE http://HOST/delete/536a4a09617b0235489842ae
  */
-exports.del = function( req, res ){
-	//TODO
+exports.del = function( req, res ){	
+	try{						
+		db.remove(COLLECTION_NAME, {"_id":req.params.id}, function( count ){
+			if(count === 0){
+				res.json(404, {'message': "Not Found"});
+				return;		
+			}
+						
+			res.json(200, {'message':'OK'});
+			return;				
+		});	
+	}catch( e ){		
+		res.json(400, {'message': e.message });
+		return;				
+	}	
+};
+
+/**
+ * @api {get} /all All
+ *
+ * @apiVersion 0.4.0
+ * @apiGroup Document
+ * @apiName GetAllDocuments
+ * @apiDescription Get all documents
+ *
+ * @apiSuccess (200) Success Get reprezentation of all documents.
+ *
+ * @apiExample CURL usage:
+ * 	curl -i http://HOST/all
+ */
+exports.all = function(req, res){
+	db.find(COLLECTION_NAME, {}, function( cursor ){		
+		cursor.toArray(function(err, docs ){
+			res.render( 'all', {'docs':docs} );
+			return;
+		});									
+	});
+};
+
+/**
+ * @api {get} /old Old
+ *
+ * @apiVersion 0.4.0
+ * @apiGroup Document
+ * @apiName GetOldDocuments
+ * @apiDescription Get old documents
+ *
+ * @apiSuccess (200) Success Get reprezentation of old documents.
+ *
+ * @apiExample CURL usage:
+ * 	curl -i http://HOST/old
+ */
+exports.old = function(req, res){		
+	db.find(COLLECTION_NAME, {'created': {$lt:getOldTime()}}, function( cursor ){		
+		cursor.toArray(function( err, docs ){
+			res.render( 'all', {'docs':docs} );
+			return;											
+		});									
+	});
+};
+
+/**
+ * @api {get} /old DeleteOld
+ *
+ * @apiVersion 0.4.0
+ * @apiGroup Document
+ * @apiName DeleteOldDocuments
+ * @apiDescription Delete old documents
+ *
+ * @apiSuccess (200) Success Get reprezentation of old documents. 
+ * @apiError (404) NotFound No documents.
+ * @apiError (400) BadRequest The request had bad syntax.
+ *
+ * @apiExample CURL usage:
+ * 	curl -i -X delete http://HOST/old/delete
+ */
+exports.deleteOld = function(req, res){	
+	try{						
+		db.remove(COLLECTION_NAME, {'created': {$lt:getOldTime()}}, function( count ){
+			if(count === 0){
+				res.json(404, {'message': "Not Found"});
+				return;		
+			}
+						
+			res.json(200, {'message':'OK'});
+			return;				
+		});	
+	}catch( e ){		
+		res.json(400, {'message': e.message });
+		return;				
+	}	
 };
 
 /**
@@ -287,6 +378,15 @@ function pad( base, len, chars, toRight){
 	return toRight ? 
 		base + new Array(len - base.length + 1).join( chars ) : 
 		new Array(len - base.length + 1).join( chars ) + base;	
+}
+
+/**
+ * Get two weeks ago
+ * 
+ * @return {Date}
+ */
+function getOldTime(){
+	return new Date ( new Date().getTime() - ( 14 * 24 * 60 * 60 * 1000 ));	
 }
 
 if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test" ) {

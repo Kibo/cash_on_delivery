@@ -18,6 +18,7 @@ app.use(favicon());
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
+app.use(express.methodOverride());
 app.use(cookieParser());
 app.use(require('less-middleware')({ src: path.join(__dirname, 'public') }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -25,7 +26,11 @@ app.use(app.router);
 
 app.get('/', routes.index);
 app.post('/save', routes.save);
-app.get('/get/:id/:reprezentation?', routes.get); //preview | print | data
+app.get('/get/:id/:reprezentation?', routes.get);
+app.del('/delete/:id', routes.del);
+app.get('/all', routes.all);
+app.get('/old', routes.old);
+app.del('/old/delete', routes.deleteOld);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

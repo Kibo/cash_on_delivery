@@ -34,8 +34,9 @@ exports.get = function( collection, id, callback ){
 			if(err){
   				throw err;
   			}
-  				
-       		callback && callback( doc );
+  			
+  			// workaround for jshint	
+       		var dummy = callback && callback( doc );
     	});		
 	});
 };
@@ -48,12 +49,57 @@ exports.get = function( collection, id, callback ){
  */
 exports.save = function( collection, obj, callback ){	
 	db.collection(collection, function(err, collection){
-		collection.insert( obj, function (err, result) {
+		collection.insert( obj, function (err, doc) {
 			if(err){
   				throw err;
   			}
   				
-  			callback && callback( result );  					  	  				  											  				  				  				  				  				
+  			// workaround for jshint	
+  			var dummy = callback && callback( doc );  					  	  				  											  				  				  				  				  				
 		});	
 	});
+};
+
+/**
+ * Remove items
+ * @param {String} collection
+ * @param {Object} query
+ * @param {Function=} callback
+ */
+exports.remove = function( collection, query, callback ){
+		
+	if( query._id ){
+		query._id = new BSON.ObjectID( query._id );
+	}
+	
+	db.collection(collection, function(err, collection){
+		collection.remove( query, {w:1}, function(err, numberOfRemovedDocs){
+			if(err){
+  				throw err;
+  			}
+  			
+  			// workaround for jshint	
+  			var dummy = callback && callback( numberOfRemovedDocs ); 	
+		});
+	});	
+};
+
+/**
+ * Find documents from collection
+ * @param {String} collection
+ * @param {Object} query
+ * @param {Function} callback 
+ */
+exports.find = function( collection, query, callback){
+	db.collection(collection, function(err, collection){
+		
+		collection.find(query, function(err, cursor){
+			if(err){
+  				throw err;
+  			}
+			
+			// workaround for jshint	
+  			var dummy = callback && callback( cursor );   			
+		});								    	
+	});	
 };
