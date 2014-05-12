@@ -62,6 +62,82 @@ define({ api: [
   },
   {
     "type": "get",
+    "url": "/old",
+    "title": "DeleteOld",
+    "version": "0.4.0",
+    "group": "Document",
+    "name": "DeleteOldDocuments",
+    "description": "Delete old documents",
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "field": "Success",
+            "optional": false,
+            "description": "Get reprezentation of old documents."
+          }
+        ]
+      }
+    },
+    "error": {
+      "fields": {
+        "400": [
+          {
+            "group": "400",
+            "field": "BadRequest",
+            "optional": false,
+            "description": "The request had bad syntax."
+          }
+        ],
+        "404": [
+          {
+            "group": "404",
+            "field": "NotFound",
+            "optional": false,
+            "description": "No documents."
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "CURL usage:",
+        "content": "curl -i -X delete http://HOST/old/delete\n"
+      }
+    ],
+    "filename": "routes/index.js"
+  },
+  {
+    "type": "get",
+    "url": "/all",
+    "title": "All",
+    "version": "0.4.0",
+    "group": "Document",
+    "name": "GetAllDocuments",
+    "description": "Get all documents",
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "field": "Success",
+            "optional": false,
+            "description": "Get reprezentation of all documents."
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "CURL usage:",
+        "content": "curl -i http://HOST/all\n"
+      }
+    ],
+    "filename": "routes/index.js"
+  },
+  {
+    "type": "get",
     "url": "/get/:id/:reprezentation?",
     "title": "Get",
     "version": "0.4.0",
@@ -125,6 +201,34 @@ define({ api: [
       {
         "title": "CURL usage:",
         "content": "curl -i -X GET http://HOST/get/536a4a09617b0235489842ae/preview\n"
+      }
+    ],
+    "filename": "routes/index.js"
+  },
+  {
+    "type": "get",
+    "url": "/old",
+    "title": "Old",
+    "version": "0.4.0",
+    "group": "Document",
+    "name": "GetOldDocuments",
+    "description": "Get old documents",
+    "success": {
+      "fields": {
+        "200": [
+          {
+            "group": "200",
+            "field": "Success",
+            "optional": false,
+            "description": "Get reprezentation of old documents."
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "CURL usage:",
+        "content": "curl -i http://HOST/old\n"
       }
     ],
     "filename": "routes/index.js"
