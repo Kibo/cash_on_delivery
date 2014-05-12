@@ -30,8 +30,8 @@ module.exports = function( grunt ) {
 			src: [ '**' ]
 		},
 		
-		'gh-push': {
-    		your_target: {
+		'gitpush': {
+    		'github': {
       			options: {
       				remote:'origin',
       				branch:'master'
@@ -51,5 +51,5 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'doc', [ 'apidoc' ] );
 	grunt.registerTask( 'lint', [ 'jshint' ] );
 	grunt.registerTask( 'gh-web', [ 'gh-pages' ] );
-	grunt.registerTask( 'git', [ 'gh-push']);
+	grunt.registerTask( 'git', [ 'gitpush']);
 };
