@@ -63,7 +63,6 @@ exports.save = function(req, res){
 	var validation = validate(req.body);			
 	if( validation.result){		
 		req.body.created = new Date();		
-		req.body.created = new Date ( new Date().getTime() - ( 20 * 24 * 60 * 60 * 1000 )); //TODO - remove
 				
 		var reprezentation = req.body.reprezentation || REPREZENTATION.DATA;
 		delete req.body.reprezentation;
