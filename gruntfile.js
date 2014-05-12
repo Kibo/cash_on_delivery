@@ -28,17 +28,28 @@ module.exports = function( grunt ) {
 				base: 'doc'
 			},
 			src: [ '**' ]
-		}
+		},
+		
+		'gh-push': {
+    		your_target: {
+      			options: {
+      				remote:'origin',
+      				branch:'master'
+      			}
+  	   		}
+  	   	}		
 	} );
 
 	grunt.loadNpmTasks( 'grunt-contrib-nodeunit' );
 	grunt.loadNpmTasks( 'grunt-apidoc' );
-	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+	grunt.loadNpmTasks( 'grunt-contrib-jshint' );	
+	grunt.loadNpmTasks( 'grunt-git' );
 	grunt.loadNpmTasks( 'grunt-gh-pages' );
 
-	grunt.registerTask( 'default', [ 'nodeunit', 'jshint', 'apidoc', 'web']);
+	grunt.registerTask( 'default', [ 'nodeunit', 'jshint', 'apidoc']);
 	grunt.registerTask( 'test', [ 'nodeunit' ] );
 	grunt.registerTask( 'doc', [ 'apidoc' ] );
 	grunt.registerTask( 'lint', [ 'jshint' ] );
-	grunt.registerTask( 'web', [ 'gh-pages' ] );
+	grunt.registerTask( 'gh-web', [ 'gh-pages' ] );
+	grunt.registerTask( 'git', [ 'gh-push']);
 };

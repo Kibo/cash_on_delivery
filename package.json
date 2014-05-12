@@ -24,6 +24,7 @@
 	"grunt-contrib-nodeunit": "*",
 	"grunt-contrib-jshint": "~0.6.3",
 	"grunt-apidoc": "*",
+	"grunt-git":"*",
 	"grunt-gh-pages":"*"
    },
    	
