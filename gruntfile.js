@@ -46,10 +46,8 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-git' );
 	grunt.loadNpmTasks( 'grunt-gh-pages' );
 
-	grunt.registerTask( 'default', [ 'nodeunit', 'jshint', 'apidoc']);
+	grunt.registerTask( 'default', [ 'nodeunit', 'jshint']);
 	grunt.registerTask( 'test', [ 'nodeunit' ] );
-	grunt.registerTask( 'doc', [ 'apidoc' ] );
-	grunt.registerTask( 'lint', [ 'jshint' ] );
-	grunt.registerTask( 'gh-web', [ 'gh-pages' ] );
+	grunt.registerTask( 'doc', [ 'apidoc', 'gh-pages']);	
 	grunt.registerTask( 'git', [ 'gitpush']);
 };

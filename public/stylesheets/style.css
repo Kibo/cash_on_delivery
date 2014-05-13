@@ -39,6 +39,10 @@ body {
   height: 297mm;
 }
 /* ## CONTENT ######################################### */
+.preview {
+  background: transparent url(../images/preview.png) no-repeat;
+  -webkit-background-size: 100% auto;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -53,18 +57,51 @@ table tr td {
   margin: 0;
   vertical-align: top;
 }
-table tr td ul {
-  font-size: 2rem;
-  margin: 0;
-  padding: 1em;
-  list-style: none;
-}
-table tr td ul li {
-  margin: 0;
-  padding: 0;
-}
 table tr .placeable {
   position: absolute;
+}
+table tr td.post_address.preview {
+  background: transparent url(../images/post_address.png) no-repeat;
+  background-size: 100% 100%;
+}
+table tr td.post_address {
+  width: 210mm;
+  height: 101mm;
+  font-size: 0.7rem;
+  line-height: 0;
+  position: relative;
+}
+table tr td.post_address ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2em;
+}
+table tr td.post_address ul.sender_address_1 {
+  top: 31mm;
+  left: 10mm;
+}
+table tr td.post_address ul.recipient_address_1 {
+  top: 77mm;
+  left: 10mm;
+}
+table tr td.post_address ul.recipient_address_2 {
+  top: 30mm;
+  left: 110mm;
+  line-height: 1.8em;
+  font-size: 1.5rem;
+}
+table tr td.post_address .bank_amount_number_1 {
+  top: 65mm;
+  left: 10mm;
+}
+table tr td.post_address .bank_amount_number_as_text {
+  top: 57mm;
+  left: 10mm;
+}
+table tr td.post_order.preview {
+  background: transparent url(../images/post_order.png) no-repeat;
+  background-size: 100% 100%;
 }
 table tr td.post_order {
   font-size: 0.7rem;
@@ -72,10 +109,6 @@ table tr td.post_order {
   width: 210mm;
   height: 101mm;
   position: relative;
-}
-table tr td.post_order img {
-  width: 100%;
-  height: 100%;
 }
 table tr td.post_order .sender_name_1 {
   top: 53.3mm;

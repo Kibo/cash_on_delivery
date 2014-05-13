@@ -14,14 +14,22 @@
 	        <div class="subpage">
 	        	<table>	        		
 					<tr>	        				        				        		
-	        			<td class="post_address">
-	        				<ul>
+	        			<td class="post_address <%=reprezentation === 'preview' ? 'preview' : '' %>">
+	        				<ul class="placeable sender_address_1">
 	        					<li><%= sender.firstname && sender.lastname ? sender.firstname + ' ' + sender.lastname : '' %></li>
 	        					<li><%= sender.street ? sender.street: '' %></li>	        					
-	        					<li><%= sender.city ? sender.city: '' %></li>	
-	        					<li><%= sender.zip ? sender.zip: '' %></li>        					
+	        					<li><%= sender.city ? sender.city: '' %> <%= sender.zip ? sender.zip: '' %></li>	        					     				
 	        				</ul>
-	        				<ul>
+	        				
+	        				<span class="placeable bank_amount_number_1">=<%= bank.amount_number ? bank.amount_number : '' %>=</span>
+	        				<span class="placeable bank_amount_number_as_text"><%= bank.amount_number_as_text ? bank.amount_number_as_text : '' %></span>
+	        					        				
+	        				<ul class="placeable recipient_address_1">
+	        					<li><%= recipient.firstname && recipient.lastname ? recipient.firstname + ' ' + recipient.lastname : '' %></li>
+	        					<li><%= recipient.street ? recipient.street: '' %></li>	        					
+	        					<li><%= recipient.city ? recipient.city: '' %> <%= recipient.zip ? recipient.zip: '' %></li>	        				        				
+	        				</ul>	        					        			
+	        				<ul class="placeable recipient_address_2">
 	        					<li><%= recipient.firstname && recipient.lastname ? recipient.firstname + ' ' + recipient.lastname : '' %></li>
 	        					<li><%= recipient.street ? recipient.street: '' %></li>	        					
 	        					<li><%= recipient.city ? recipient.city: '' %></li>	
@@ -30,11 +38,7 @@
 	        			</td>	        			
 	        		</tr>	        			        	
 	        		<tr>	        			
-	        			<td class="post_order">	 
-	        				<% if(reprezentation === 'preview'){%>       				
-	    						<img src="/images/post_order.png">
-	    					<% } %>
-	    						    						    					
+	        			<td class="post_order <%=reprezentation === 'preview' ? 'preview' : '' %>">	 	        					    						    						    			
 	        				<span class="placeable sender_name_1"><%= sender.firstname && sender.lastname ? sender.firstname + ' ' + sender.lastname : '' %></span>
 	        				<span class="placeable sender_street_1"><%= sender.street ? sender.street : '' %></span>	        				
 	        				<span class="placeable sender_city_1"><%= sender.zip && sender.city  ? sender.zip + ' ' + sender.city : '' %></span>
