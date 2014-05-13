@@ -3,7 +3,7 @@ Web service for filling out the postal order form for cash on delivery (Poštovn
 
 - [Public online service](#) - TODO
 - [REST API](http://kibo.github.io/cash_on_delivery/)
-- [Press Template](https://www.postshop.cz/cs/archove-provedeni/postovni-poukazka-a-dobirkova-s-adresnim/p&id=50)
+- [Print Template](https://www.postshop.cz/cs/archove-provedeni/postovni-poukazka-a-dobirkova-s-adresnim/p&id=50)
 
 **Preview**<br />
 ![Preview](https://raw.githubusercontent.com/Kibo/cash_on_delivery/master/public/images/preview.png)
