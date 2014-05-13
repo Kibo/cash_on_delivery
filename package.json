@@ -20,9 +20,9 @@
   "devDependencies": {
 	"nodeunit": "*",
 	"nodemon": "*",
-	"grunt": "^0.4.4",
+	"grunt": "*",
 	"grunt-contrib-nodeunit": "*",
-	"grunt-contrib-jshint": "~0.6.3",
+	"grunt-contrib-jshint": "*",
 	"grunt-apidoc": "*",
 	"grunt-git":"*",
 	"grunt-gh-pages":"*"
