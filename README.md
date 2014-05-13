@@ -4,8 +4,6 @@ Web service for filling out the postal order form for cash on delivery (Poštovn
 ## Webservice
 - [Public online service](#) -TODO
 
-https://raw.githubusercontent.com/Kibo/cash_on_delivery/master/public/images/preview.png
-
 ![Preview](https://raw.githubusercontent.com/Kibo/cash_on_delivery/master/public/images/preview.png)
 
 ##API
