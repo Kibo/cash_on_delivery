@@ -6,7 +6,7 @@ Web service for filling out the postal order form for cash on delivery (Poštovn
 
 https://raw.githubusercontent.com/Kibo/cash_on_delivery/master/public/images/preview.png
 
-![Preview](https://raw.github.com/Kibo/TiledMapBuilder/master/WebContent/img/editor.png)
+![Preview](https://raw.githubusercontent.com/Kibo/cash_on_delivery/master/public/images/preview.png)
 
 ##API
 - [Documentation](http://kibo.github.io/cash_on_delivery/)
