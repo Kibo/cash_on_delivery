@@ -16,7 +16,7 @@ module.exports = function( grunt ) {
 
 		jshint: {
 			// define the files to lint
-			files: [ 'routes/*.js', 'db/*.js' ],
+			files: [ 'routes/*.js', 'db/*.js', 'public/javascripts/*.js' ],
 			options: {
 				"-W099": true, // disable: Mixed spaces and tabs.
 				"-W014": true, // disable: Bag line breaking
