@@ -38,6 +38,26 @@ body {
   padding: 0;
   height: 297mm;
 }
+nav {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+}
+nav fieldset {
+  border-radius: 5px;
+  background: orange;
+  box-shadow: 1px 1px 5px #333;
+  border: none;
+}
+nav fieldset legend {
+  text-align: center;
+}
+nav fieldset label {
+  display: block;
+}
+nav fieldset input[type="number"] {
+  width: 50px;
+}
 /* ## CONTENT ######################################### */
 .preview {
   background: transparent url(../images/preview.png) no-repeat;
@@ -56,6 +76,11 @@ table tr td {
   padding: 0;
   margin: 0;
   vertical-align: top;
+}
+table tr td .text_fields {
+  position: relative;
+  top: 0;
+  left: 0;
 }
 table tr .placeable {
   position: absolute;
@@ -92,7 +117,7 @@ table tr td.post_address ul.recipient_address_2 {
   font-size: 1.5rem;
 }
 table tr td.post_address .bank_amount_number_1 {
-  top: 65mm;
+  top: 48.5mm;
   left: 10mm;
 }
 table tr td.post_address .bank_amount_number_as_text {
