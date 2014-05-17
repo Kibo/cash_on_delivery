@@ -1,5 +1,6 @@
 # Cash on delivery (cs_CZ only)
 Web service for filling out the postal order form for cash on delivery (Poštovní dobírková poukázka A).
+
 It is ready for deploy to [OpenShift cloud platform](https://www.openshift.com/). 
 
 - [REST API](http://kibo.github.io/cash_on_delivery/)
