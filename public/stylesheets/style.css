@@ -104,11 +104,11 @@ table tr td.post_address ul {
 }
 table tr td.post_address ul.sender_address_1 {
   top: 31mm;
-  left: 10mm;
+  left: 8mm;
 }
 table tr td.post_address ul.recipient_address_1 {
   top: 77mm;
-  left: 10mm;
+  left: 8mm;
 }
 table tr td.post_address ul.recipient_address_2 {
   top: 30mm;
@@ -118,11 +118,11 @@ table tr td.post_address ul.recipient_address_2 {
 }
 table tr td.post_address .bank_amount_number_1 {
   top: 48.5mm;
-  left: 10mm;
+  left: 8mm;
 }
 table tr td.post_address .bank_amount_number_as_text {
   top: 57mm;
-  left: 10mm;
+  left: 8mm;
 }
 table tr td.post_order.preview {
   background: transparent url(../images/post_order.png) no-repeat;
@@ -136,67 +136,67 @@ table tr td.post_order {
   position: relative;
 }
 table tr td.post_order .sender_name_1 {
-  top: 53.3mm;
-  left: 5mm;
+  top: 54mm;
+  left: 8mm;
 }
 table tr td.post_order .sender_street_1 {
-  top: 58.3mm;
-  left: 5mm;
+  top: 59mm;
+  left: 8mm;
 }
 table tr td.post_order .sender_city_1 {
-  top: 63.5mm;
-  left: 5mm;
+  top: 64mm;
+  left: 8mm;
 }
 table tr td.post_order .recipient_name_1 {
-  top: 83.2mm;
-  left: 5mm;
+  top: 84mm;
+  left: 8mm;
 }
 table tr td.post_order .recipient_street_1 {
-  top: 88.2mm;
-  left: 5mm;
+  top: 89mm;
+  left: 8mm;
 }
 table tr td.post_order .recipient_city_1 {
-  top: 93.5mm;
-  left: 5mm;
+  top: 94mm;
+  left: 8mm;
 }
 table tr td.post_order .bank_purpose_of_payment_1 {
-  top: 30.5mm;
-  left: 5mm;
+  top: 31mm;
+  left: 8mm;
 }
 table tr td.post_order .bank_account_number_1 {
-  top: 68.5mm;
+  top: 69.5mm;
   left: 15mm;
 }
 table tr td.post_order .bank_variable_symbol_1 {
-  top: 73mm;
+  top: 74mm;
   left: 15mm;
 }
 table tr td.post_order .bank_specific_symbol_1 {
-  top: 77.3mm;
+  top: 78mm;
   left: 15mm;
 }
 table tr td.post_order .bank_amount_number_1 {
-  top: 36mm;
-  left: 5mm;
+  top: 37mm;
+  left: 8mm;
 }
 table tr td.post_order .bank_amount_number_penny_1 {
-  top: 36mm;
+  top: 37mm;
   left: 53mm;
 }
 table tr td.post_order .bank_amount_number_as_text {
-  top: 43mm;
-  left: 5mm;
+  top: 43.5mm;
+  left: 8mm;
 }
 table tr td.post_order .sender_name_2 {
-  top: 37.3mm;
+  top: 38mm;
   left: 65mm;
 }
 table tr td.post_order .sender_street_2 {
-  top: 42.3mm;
+  top: 43.5mm;
   left: 65mm;
 }
 table tr td.post_order .sender_city_2 {
-  top: 48mm;
+  top: 49mm;
   left: 65mm;
 }
 table tr td.post_order .grid {
@@ -267,5 +267,8 @@ table tr td.post_order .bank_specific_symbol_2 {
   .page {
     margin: 0;
     page-break-after: always;
+  }
+  nav {
+    display: none;
   }
 }

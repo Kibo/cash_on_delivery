@@ -8,14 +8,13 @@
 @POST_ADDRESS_WIDTH:210mm;
 @POST_ADDRESS_HEIGHT:101mm;
 
-@POST_ADDRESS_LEFT_MARGIN_LEVEL_1:10mm;
+@POST_ADDRESS_LEFT_MARGIN_LEVEL_1:8mm;
 @POST_ADDRESS_LEFT_MARGIN_LEVEL_2:110mm;
-
 
 @POST_ORDER_WIDTH:210mm;
 @POST_ORDER_HEIGHT:101mm;
 
-@POST_ORDER_LEFT_MARGIN_LEVEL_1:5mm;
+@POST_ORDER_LEFT_MARGIN_LEVEL_1:8mm;
 @POST_ORDER_LEFT_MARGIN_LEVEL_2:15mm;
 @POST_ORDER_LEFT_MARGIN_LEVEL_3:65mm;
 @POST_ORDER_LEFT_MARGIN_LEVEL_4:123.6mm;
@@ -201,83 +200,83 @@ table{
       height:@POST_ORDER_HEIGHT;
       position:relative;
                                                  
-      .sender_name_1{
-        top:53.3mm;
+     .sender_name_1{
+        top:54mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
       }  
      
      .sender_street_1{
-       top:58.3mm;
+       top:59mm;
        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
       } 
      
      .sender_city_1{
-       top:63.5mm;
+       top:64mm;
        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
       } 
       
      .recipient_name_1{
-        top:83.2mm;
+        top:84mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
       }  
      
      .recipient_street_1{
-       top:88.2mm;
+       top:89mm;
        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
       } 
      
      .recipient_city_1{
-       top:93.5mm;
+       top:94mm;
        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
       }
       
       .bank_purpose_of_payment_1{
-        top:30.5mm;
+        top:31mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;
       }      
       
       .bank_account_number_1{
-        top:68.5mm;
+        top:69.5mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_2; 
       }      
       
       .bank_variable_symbol_1{
-        top:73mm;
+        top:74mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_2; 
       }
       
       .bank_specific_symbol_1{
-        top:77.3mm;
+        top:78mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_2; 
       }     
       
       .bank_amount_number_1{
-        top:36mm;
+        top:37mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;
       }
       
       .bank_amount_number_penny_1{
-        top:36mm;
+        top:37mm;
         left:53mm;
       }
       
       .bank_amount_number_as_text{
-        top:43mm;
+        top:43.5mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;
       } 
             
       .sender_name_2{
-        top:37.3mm;
+        top:38mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_3;         
       }  
      
      .sender_street_2{
-       top:42.3mm;
+       top:43.5mm;
        left:@POST_ORDER_LEFT_MARGIN_LEVEL_3;         
       } 
      
      .sender_city_2{
-       top:48mm;
+       top:49mm;
        left:@POST_ORDER_LEFT_MARGIN_LEVEL_3;         
       }
       
@@ -361,5 +360,9 @@ table{
   .page {
         margin: 0;              
         page-break-after: always;            
-    }
+   }
+   
+   nav{
+     display:none;
+   }   
 }
