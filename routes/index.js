@@ -198,7 +198,7 @@ exports.old = function(req, res){
  * @apiName DeleteOldDocuments
  * @apiDescription Delete old documents
  *
- * @apiSuccess (200) Success Get reprezentation of old documents. 
+ * @apiSuccess (200) Success Delete old documents. 
  * @apiError (404) NotFound No documents.
  * @apiError (400) BadRequest The request had bad syntax.
  *
