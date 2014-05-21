@@ -75,7 +75,7 @@
             "group": "200",
             "field": "Success",
             "optional": false,
-            "description": "Get reprezentation of old documents."
+            "description": "Delete old documents."
           }
         ]
       }
