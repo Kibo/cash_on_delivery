@@ -191,7 +191,7 @@ exports.old = function(req, res){
 };
 
 /**
- * @api {get} /old DeleteOld
+ * @api {get} /old/delete Old_Delete
  *
  * @apiVersion 0.4.0
  * @apiGroup Document
