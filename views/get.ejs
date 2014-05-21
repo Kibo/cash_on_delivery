@@ -21,9 +21,9 @@
 	<div class="book">		
 		<div class="page">
 	        <div class="subpage">
-	        	<table>	        		
+	        	<table class="<%= reprezentation === 'preview' ? 'preview' : 'print' %> ">	        		
 					<tr>	        				        				        		
-	        			<td class="post_address <%=reprezentation === 'preview' ? 'preview' : '' %>">
+	        			<td class="post_address">
 	        				<div class="text_fields">
 		        				<ul class="placeable sender_address_1">
 		        					<li><%= sender.firstname && sender.lastname ? sender.firstname + ' ' + sender.lastname : '' %></li>
@@ -37,7 +37,10 @@
 		        				<ul class="placeable recipient_address_1">
 		        					<li><%= recipient.firstname && recipient.lastname ? recipient.firstname + ' ' + recipient.lastname : '' %></li>
 		        					<li><%= recipient.street ? recipient.street: '' %></li>	        					
-		        					<li><%= recipient.city ? recipient.city: '' %> <%= recipient.zip ? recipient.zip: '' %></li>	        				        				
+		        					<li><%= recipient.city ? recipient.city: '' %> <%= recipient.zip ? recipient.zip: '' %></li>
+		        					<li>&nbsp;</li>	        				        						        					
+		        					<li><%= recipient.phone ? 'tel. ' + recipient.phone: '' %></li>
+		        					<li><%= recipient.email ? recipient.email: '' %></li>		        							        							        			
 		        				</ul>	        					        			
 		        				<ul class="placeable recipient_address_2">
 		        					<li><%= recipient.firstname && recipient.lastname ? recipient.firstname + ' ' + recipient.lastname : '' %></li>
@@ -49,7 +52,7 @@
 	        			</td>	        			
 	        		</tr>	        			        	
 	        		<tr>	        			
-	        			<td class="post_order <%=reprezentation === 'preview' ? 'preview' : '' %>">
+	        			<td class="post_order">
 	        				<div class="text_fields">	 	        					    						    						    			
 		        				<span class="placeable sender_name_1"><%= sender.firstname && sender.lastname ? sender.firstname + ' ' + sender.lastname : '' %></span>
 		        				<span class="placeable sender_street_1"><%= sender.street ? sender.street : '' %></span>	        				
@@ -70,13 +73,8 @@
 		        				<span class="placeable sender_name_2"><%= sender.firstname && sender.lastname ? sender.firstname + ' ' + sender.lastname : '' %></span>
 		        				<span class="placeable sender_street_2"><%= sender.street ? sender.street : '' %></span>	        				
 		        				<span class="placeable sender_city_2"><%= sender.zip && sender.city  ? sender.zip + ' ' + sender.city : '' %></span>
-		        				
-		        				<span class="placeable grid recipient_firstname_2"><%= recipient.firstname ? recipient.firstname : '' %></span>
-		        				<span class="placeable grid recipient_lastname_2"><%= recipient.lastname ? recipient.lastname : '' %></span>
-		        				<span class="placeable grid recipient_street_2"><%= recipient.street ? recipient.street : '' %></span>	        				
-		        				<span class="placeable grid recipient_city_2"><%= recipient.city  ? recipient.city : '' %></span>
-		        				<span class="placeable grid recipient_zip_2"><%= recipient.zip ? recipient.zip : '' %></span>
-		        				
+		        						        						        			
+		        				<span class="placeable grid post_code_1"><%= post.code ? post.code : '' %></span>
 		        				<span class="placeable grid bank_amount_number_2"><%= bank.amount_number_full_grid ? bank.amount_number_full_grid : '' %></span>
 		        				<span class="placeable grid bank_amount_number_penny_2"><%= bank.amount_number_penny ? bank.amount_number_penny : '' %></span>	        				
 		        				<span class="placeable grid bank_account_number_prefix_2"><%= bank.account_number_prefix ? bank.account_number_prefix : '' %></span>
@@ -85,6 +83,13 @@
 		        				<span class="placeable grid bank_variable_symbol_2"><%= bank.variable_symbol_full ? bank.variable_symbol_full : '' %></span>	        				
 		        				<span class="placeable grid bank_constant_symbol_2"><%= bank.constant_symbol ? bank.constant_symbol : '' %></span>
 		        				<span class="placeable grid bank_specific_symbol_2"><%= bank.specific_symbol_full ? bank.specific_symbol_full : '' %></span>
+		        				
+		        				<span class="placeable grid recipient_firstname_2"><%= recipient.firstname ? recipient.firstname : '' %></span>
+		        				<span class="placeable grid recipient_lastname_2"><%= recipient.lastname ? recipient.lastname : '' %></span>
+		        				<span class="placeable grid recipient_street_2"><%= recipient.street ? recipient.street : '' %></span>	        				
+		        				<span class="placeable grid recipient_city_2"><%= recipient.city  ? recipient.city : '' %></span>
+		        				<span class="placeable grid recipient_zip_2"><%= recipient.zip ? recipient.zip : '' %></span>
+		        				<span class="placeable post_code_2"><%= post.code ? post.code + '<' : '' %></span>
 		        			</div>	        					        					        					        					        					        					     
 	        			</td>
 	        		</tr>	        		        			        			       

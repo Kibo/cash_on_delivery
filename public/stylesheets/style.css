@@ -59,9 +59,9 @@ nav fieldset input[type="number"] {
   width: 50px;
 }
 /* ## CONTENT ######################################### */
-.preview {
-  background: transparent url(../images/preview.png) no-repeat;
-  -webkit-background-size: 100% auto;
+table.preview {
+  background: transparent url(../images/postform_preview.png) no-repeat;
+  -webkit-background-size: 210mm 202mm;
 }
 table {
   width: 100%;
@@ -84,10 +84,6 @@ table tr td .text_fields {
 }
 table tr .placeable {
   position: absolute;
-}
-table tr td.post_address.preview {
-  background: transparent url(../images/post_address.png) no-repeat;
-  background-size: 100% 100%;
 }
 table tr td.post_address {
   width: 210mm;
@@ -124,10 +120,6 @@ table tr td.post_address .bank_amount_number_as_text {
   top: 57mm;
   left: 8mm;
 }
-table tr td.post_order.preview {
-  background: transparent url(../images/post_order.png) no-repeat;
-  background-size: 100% 100%;
-}
 table tr td.post_order {
   font-size: 0.7rem;
   line-height: 0;
@@ -136,27 +128,27 @@ table tr td.post_order {
   position: relative;
 }
 table tr td.post_order .sender_name_1 {
-  top: 54mm;
+  top: 54.5mm;
   left: 8mm;
 }
 table tr td.post_order .sender_street_1 {
-  top: 59mm;
+  top: 59.5mm;
   left: 8mm;
 }
 table tr td.post_order .sender_city_1 {
-  top: 64mm;
+  top: 64.5mm;
   left: 8mm;
 }
 table tr td.post_order .recipient_name_1 {
-  top: 84mm;
+  top: 85mm;
   left: 8mm;
 }
 table tr td.post_order .recipient_street_1 {
-  top: 89mm;
+  top: 90mm;
   left: 8mm;
 }
 table tr td.post_order .recipient_city_1 {
-  top: 94mm;
+  top: 95mm;
   left: 8mm;
 }
 table tr td.post_order .bank_purpose_of_payment_1 {
@@ -164,15 +156,15 @@ table tr td.post_order .bank_purpose_of_payment_1 {
   left: 8mm;
 }
 table tr td.post_order .bank_account_number_1 {
-  top: 69.5mm;
+  top: 70mm;
   left: 15mm;
 }
 table tr td.post_order .bank_variable_symbol_1 {
-  top: 74mm;
+  top: 74.5mm;
   left: 15mm;
 }
 table tr td.post_order .bank_specific_symbol_1 {
-  top: 78mm;
+  top: 79mm;
   left: 15mm;
 }
 table tr td.post_order .bank_amount_number_1 {
@@ -203,57 +195,66 @@ table tr td.post_order .grid {
   letter-spacing: 9.7px;
   font-size: 15px;
 }
-table tr td.post_order .recipient_firstname_2 {
-  left: 123.6mm;
-  top: 49mm;
-}
-table tr td.post_order .recipient_lastname_2 {
-  left: 123.6mm;
-  top: 56mm;
-}
-table tr td.post_order .recipient_street_2 {
-  left: 123.6mm;
-  top: 62.5mm;
-}
-table tr td.post_order .recipient_city_2 {
-  left: 123.6mm;
-  top: 68.7mm;
-}
-table tr td.post_order .recipient_zip_2 {
-  left: 123.6mm;
-  top: 76mm;
-}
 table tr td.post_order .bank_amount_number_2 {
-  left: 123.6mm;
+  left: 122.5mm;
   top: 10mm;
 }
 table tr td.post_order .bank_amount_number_penny_2 {
-  left: 163.4mm;
+  left: 162mm;
+  top: 10mm;
+}
+table tr td.post_order .post_code_1 {
+  left: 192mm;
   top: 10mm;
 }
 table tr td.post_order .bank_account_number_prefix_2 {
-  left: 123.6mm;
+  left: 122.5mm;
   top: 18.5mm;
 }
 table tr td.post_order .bank_account_number_account_2 {
-  left: 153.5mm;
+  left: 152mm;
   top: 18.5mm;
 }
 table tr td.post_order .bank_account_number_bank_code_2 {
-  left: 123.6mm;
+  left: 122.5mm;
   top: 27mm;
 }
 table tr td.post_order .bank_variable_symbol_2 {
-  left: 153.5mm;
+  left: 152mm;
   top: 27mm;
 }
 table tr td.post_order .bank_constant_symbol_2 {
-  left: 123.6mm;
+  left: 122.5mm;
   top: 35.3mm;
 }
 table tr td.post_order .bank_specific_symbol_2 {
-  left: 153.5mm;
+  left: 152mm;
   top: 35.3mm;
+}
+table tr td.post_order .recipient_firstname_2 {
+  left: 122.5mm;
+  top: 49mm;
+}
+table tr td.post_order .recipient_lastname_2 {
+  left: 122.5mm;
+  top: 56mm;
+}
+table tr td.post_order .recipient_street_2 {
+  left: 122.5mm;
+  top: 62.5mm;
+}
+table tr td.post_order .recipient_city_2 {
+  left: 122.5mm;
+  top: 68.7mm;
+}
+table tr td.post_order .recipient_zip_2 {
+  left: 122.5mm;
+  top: 76mm;
+}
+table tr td.post_order .post_code_2 {
+  font-size: 15px;
+  left: 192mm;
+  top: 90mm;
 }
 /* ## PRINT ######################################### */
 @media print {

@@ -17,12 +17,14 @@
 @POST_ORDER_LEFT_MARGIN_LEVEL_1:8mm;
 @POST_ORDER_LEFT_MARGIN_LEVEL_2:15mm;
 @POST_ORDER_LEFT_MARGIN_LEVEL_3:65mm;
-@POST_ORDER_LEFT_MARGIN_LEVEL_4:123.6mm;
-@POST_ORDER_LEFT_MARGIN_LEVEL_5:153.5mm;
+@POST_ORDER_LEFT_MARGIN_LEVEL_4:122.5mm;
+@POST_ORDER_LEFT_MARGIN_LEVEL_5:152mm;
 
 @POST_ORDER_TOP_MARGIN_LEVEL_1:18.5mm;
 @POST_ORDER_TOP_MARGIN_LEVEL_2:27mm;
 @POST_ORDER_TOP_MARGIN_LEVEL_3:35.3mm;
+
+@GRID_FONT_SIZE:15px;
 
 /* ## MIXINS ######################################## */
 .property_(@property, @value) {
@@ -111,9 +113,9 @@ nav{
 }
 
 /* ## CONTENT ######################################### */
-.preview{
-  background:transparent url(../images/preview.png) no-repeat;
-  -webkit-background-size: 100% auto; 
+table.preview{
+  background:transparent url(../images/postform_preview.png) no-repeat;
+  -webkit-background-size: 210mm 202mm; 
 }
 
 table{
@@ -140,12 +142,7 @@ table{
     .placeable{
         position:absolute;
     }
-     
-    td.post_address.preview{
-      background:transparent url(../images/post_address.png) no-repeat;
-      background-size: 100% 100%; 
-    }  
-     
+         
     td.post_address{    
       width: @POST_ADDRESS_WIDTH;
       height:@POST_ADDRESS_HEIGHT;
@@ -187,12 +184,7 @@ table{
         left:@POST_ADDRESS_LEFT_MARGIN_LEVEL_1;  
       }              
     }
-     
-    td.post_order.preview{
-      background:transparent url(../images/post_order.png) no-repeat;
-      background-size: 100% 100%; 
-    } 
-           
+                  
     td.post_order{
       font-size:0.7rem;
       line-height: 0;                      
@@ -201,32 +193,32 @@ table{
       position:relative;
                                                  
      .sender_name_1{
-        top:54mm;
+        top:54.5mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
       }  
      
      .sender_street_1{
-       top:59mm;
+       top:59.5mm;
        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
       } 
      
      .sender_city_1{
-       top:64mm;
+       top:64.5mm;
        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
       } 
       
      .recipient_name_1{
-        top:84mm;
+        top:85mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
       }  
      
      .recipient_street_1{
-       top:89mm;
+       top:90mm;
        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
       } 
      
      .recipient_city_1{
-       top:94mm;
+       top:95mm;
        left:@POST_ORDER_LEFT_MARGIN_LEVEL_1;         
       }
       
@@ -236,17 +228,17 @@ table{
       }      
       
       .bank_account_number_1{
-        top:69.5mm;
+        top:70mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_2; 
       }      
       
       .bank_variable_symbol_1{
-        top:74mm;
+        top:74.5mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_2; 
       }
       
       .bank_specific_symbol_1{
-        top:78mm;
+        top:79mm;
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_2; 
       }     
       
@@ -282,40 +274,24 @@ table{
       
       .grid{
         letter-spacing:9.7px;
-        font-size: 15px; 
+        font-size: @GRID_FONT_SIZE; 
       }
-            
-      .recipient_firstname_2{
-        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
-        top:49mm;
-      }
-      .recipient_lastname_2{
-        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
-        top:56mm;
-      }
-      .recipient_street_2{
-        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
-        top:62.5mm;
-      }
-      .recipient_city_2{
-        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
-        top:68.7mm;
-      }
-      .recipient_zip_2{
-        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
-        top:76mm;
-      }   
-      
+                       
       .bank_amount_number_2{
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
         top:10mm;
       }       
       
       .bank_amount_number_penny_2{
-        left:163.4mm;
+        left:162mm;
         top:10mm; 
-      }        
+      }
       
+      .post_code_1{
+        left:192mm;
+        top:10mm;
+      } 
+                            
       .bank_account_number_prefix_2{
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
         top:@POST_ORDER_TOP_MARGIN_LEVEL_1;
@@ -344,7 +320,34 @@ table{
       .bank_specific_symbol_2{
         left:@POST_ORDER_LEFT_MARGIN_LEVEL_5;
         top:@POST_ORDER_TOP_MARGIN_LEVEL_3; 
-      }                                     
+      }  
+      
+      .recipient_firstname_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:49mm;
+      }
+      .recipient_lastname_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:56mm;
+      }
+      .recipient_street_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:62.5mm;
+      }
+      .recipient_city_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:68.7mm;
+      }
+      .recipient_zip_2{
+        left:@POST_ORDER_LEFT_MARGIN_LEVEL_4;
+        top:76mm;
+      }   
+      
+      .post_code_2{
+        font-size: @GRID_FONT_SIZE; 
+        left:192mm;
+        top:90mm;
+      }                                              
     }              
   } 
 }

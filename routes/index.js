@@ -328,6 +328,9 @@ function extendsData(data){
 	data.bank.amount_number_full_grid = pad( data.bank.amount_number, 8, '=');
 	data.bank.variable_symbol_full = pad( data.bank.variable_symbol, 10, '0');
 	data.bank.specific_symbol_full = pad( data.bank.specific_symbol, 10, '0');
+	
+	data.post = {};
+	data.post.code = 116;
 			
 	return data;
 }
